@@ -59,7 +59,9 @@ a{color:inherit}
 .section-accent{background:var(--accent)}
 .section-image{background:url('./assets/images/imgi_65_a2a009_e0054fbaf9eb4446b930d4d05688e1e2~mv2.jpg') center/cover no-repeat;color:#fff}
 
-.section-title{font-family: Montserrat, Inter, sans-serif;font-weight:700;font-size:36px;margin:0 0 18px}
+.section-title{font-family: Montserrat, Inter, sans-serif;font-weight:700;font-size:72px;line-height:1.05;margin:0 0 18px;background:linear-gradient(180deg,#64caa1 0%, #3aa37b 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.section #quem .section-title{font-size:72px}
+.section-title.small{font-size:28px}
 .section-title.small{font-size:28px}
 .section-title.center{text-align:center}
 .section-title.accent{color:var(--accent)}
@@ -73,6 +75,8 @@ a{color:inherit}
 .stat-icon{font-size:28px}
 .stat-number{font-weight:700;font-size:24px}
 .stat-label{color:#555}
+/* Quem paragraph large like original */
+.section#quem p{font-size:28px;line-height:1.5;color:#2a3440}
 
 .overlay-card{background:rgba(86,195,155,.95);color:#083326;border-radius:14px;padding:28px;max-width:900px}
 .facts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
