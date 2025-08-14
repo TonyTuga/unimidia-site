@@ -38,16 +38,46 @@ if (form) {
 // Vimeo play button: start playback on click
 const playBtn = document.getElementById('hero-play');
 const vimeoIframe = document.getElementById('heroVimeo');
+const controlsWrap = document.getElementById('hero-controls');
+const toggleBtn = document.getElementById('hero-toggle');
+const volumeSlider = document.getElementById('hero-volume');
 if (playBtn && vimeoIframe && typeof window.Vimeo !== 'undefined') {
   const player = new window.Vimeo.Player(vimeoIframe);
+
+  const showControls = () => { if (controlsWrap) controlsWrap.style.display = 'inline-flex'; };
+  const hideControls = () => { if (controlsWrap) controlsWrap.style.display = 'none'; };
+
   playBtn.addEventListener('click', (e) => {
     e.preventDefault();
     playBtn.style.display = 'none';
     player.play();
+    showControls();
   });
 
-  // When video ends, show button again
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      player.getPaused().then((paused) => {
+        if (paused) {
+          player.play();
+          toggleBtn.textContent = 'Pausa';
+          toggleBtn.setAttribute('aria-pressed', 'false');
+        } else {
+          player.pause();
+          toggleBtn.textContent = 'Continuar';
+          toggleBtn.setAttribute('aria-pressed', 'true');
+        }
+      });
+    });
+  }
+
+  if (volumeSlider) {
+    volumeSlider.addEventListener('input', () => {
+      player.setVolume(parseFloat(volumeSlider.value));
+    });
+  }
+
   player.on('ended', () => {
+    hideControls();
     playBtn.style.display = '';
   });
 }
