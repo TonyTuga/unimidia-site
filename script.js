@@ -38,9 +38,6 @@ if (form) {
 // Vimeo play button and custom controls
 const playBtn = document.getElementById('hero-play');
 const vimeoIframe = document.getElementById('heroVimeo');
-const controlsWrap = document.getElementById('hero-controls');
-const toggleBtn = document.getElementById('hero-toggle');
-const volumeSlider = document.getElementById('hero-volume');
 
 /**
  * Initialize Vimeo Player and wire up custom controls. We wait until the
@@ -51,9 +48,6 @@ const initVimeo = () => {
 
   const player = new window.Vimeo.Player(vimeoIframe);
 
-  const showControls = () => { if (controlsWrap) controlsWrap.style.display = 'inline-flex'; };
-  const hideControls = () => { if (controlsWrap) controlsWrap.style.display = 'none'; };
-
   // Keep UI in sync with player state
   player.on('play', () => {
     if (playBtn) playBtn.style.display = 'none';
@@ -61,22 +55,13 @@ const initVimeo = () => {
       toggleBtn.textContent = 'Pausa';
       toggleBtn.setAttribute('aria-pressed', 'false');
     }
-    showControls();
+    // native controls will be visible; nothing else to show
   });
   player.on('pause', () => {
-    if (toggleBtn) {
-      toggleBtn.textContent = 'Continuar';
-      toggleBtn.setAttribute('aria-pressed', 'true');
-    }
     // Keep big play button hidden during pauses; user can use toggle to resume
   });
   player.on('ended', () => {
-    hideControls();
     if (playBtn) playBtn.style.display = '';
-    if (toggleBtn) {
-      toggleBtn.textContent = 'Continuar';
-      toggleBtn.setAttribute('aria-pressed', 'true');
-    }
   });
 
   // Big play button
@@ -85,28 +70,7 @@ const initVimeo = () => {
     player.play();
   });
 
-  // Pause/continue toggle
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
-      player.getPaused().then((paused) => {
-        if (paused) {
-          player.play();
-        } else {
-          player.pause();
-        }
-      });
-    });
-  }
-
-  // Volume slider
-  if (volumeSlider) {
-    // Initialize with the current volume
-    player.getVolume().then((v) => { volumeSlider.value = String(v); }).catch(() => {});
-    volumeSlider.addEventListener('input', () => {
-      const value = Math.max(0, Math.min(1, parseFloat(volumeSlider.value)));
-      player.setVolume(value).catch(() => {});
-    });
-  }
+  // Removed custom pause/volume controls; rely on Vimeo UI
 
   return true;
 };
