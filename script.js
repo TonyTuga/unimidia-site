@@ -38,12 +38,17 @@ if (form) {
 // Vimeo play button: start playback on click
 const playBtn = document.getElementById('hero-play');
 const vimeoIframe = document.getElementById('heroVimeo');
-if (playBtn && vimeoIframe) {
+if (playBtn && vimeoIframe && typeof window.Vimeo !== 'undefined') {
+  const player = new window.Vimeo.Player(vimeoIframe);
   playBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    try {
-      vimeoIframe.contentWindow.postMessage({ method: 'play' }, '*');
-    } catch {}
+    playBtn.style.display = 'none';
+    player.play();
+  });
+
+  // When video ends, show button again
+  player.on('ended', () => {
+    playBtn.style.display = '';
   });
 }
 
