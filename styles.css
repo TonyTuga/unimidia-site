@@ -89,12 +89,7 @@ a{color:inherit}
 .split-content{padding:28px}
 .hide-on-mobile{display:block}
 
-/* Team */
-.team{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
-.member{position:relative}
-.member img{display:block;width:100%;height:auto;border-radius:6px}
-.member-tag{position:absolute;left:14px;bottom:14px;background:#111;color:#fff;padding:10px 14px;border-radius:6px}
-.member-tag span{display:block;color:#d0d0d0;font-size:12px;margin-top:2px}
+/* Team (removed) */
 
 /* Contact */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
@@ -119,7 +114,7 @@ input,textarea{width:100%;padding:12px 14px;border-radius:6px;border:1px solid #
   .grid-2{grid-template-columns:1fr}
   .split{grid-template-columns:1fr}
   .hide-on-mobile{display:none}
-  .team{grid-template-columns:repeat(2,minmax(0,1fr))}
+  /* team removed */
 }
 @media (max-width: 720px){
   .nav{display:none}
