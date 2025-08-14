@@ -37,10 +37,9 @@ a{color:inherit}
 .hero-poster{background:url('./assets/images/imgi_64_a2a009_e0054fbaf9eb4446b930d4d05688e1e2~mv2.jpg') center/cover no-repeat}
 .hero-video-wrap{position:absolute;inset:0;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08)}
 .hero-video{position:absolute;top:50%;left:50%;width:120vw;height:120vh;transform:translate(-50%,-50%);pointer-events:none;opacity:.65}
-.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.35)}
+.hero-overlay{display:none}
 .hero-content{position:relative;text-align:center}
-.hero-title{font-family: Montserrat, Inter, sans-serif;font-size:42px;margin:0 0 8px}
-.hero-sub{opacity:.9;margin:0 0 20px}
+.hero-title,.hero-sub{display:none}
 .hero-content .btn{margin:0 6px}
 
 .btn{display:inline-block;border-radius:6px;padding:12px 18px;border:1px solid transparent;text-decoration:none;cursor:pointer;font-weight:600}
