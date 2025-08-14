@@ -26,13 +26,15 @@ a{color:inherit}
 .site-header{position:sticky;top:0;z-index:50;background:#000;color:#fff}
 .header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
 .brand{font-family: Montserrat, Inter, sans-serif;font-weight:700;letter-spacing:.5px;text-transform:lowercase}
+.brand-logo{height:28px;display:block}
 .nav{display:flex;gap:24px}
 .nav a{color:#ddd;text-decoration:none;font-size:14px;letter-spacing:.14em}
 .nav a:hover{color:#fff}
 .nav-toggle{display:none;background:none;border:0;color:#fff;font-size:22px}
 
 /* Hero */
-.hero{position:relative;min-height:60vh;background:url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;color:#fff;display:grid;place-items:center}
+.hero{position:relative;min-height:60vh;background:#111;color:#fff;display:grid;place-items:center}
+.hero-poster{background:url('./assets/images/imgi_64_a2a009_e0054fbaf9eb4446b930d4d05688e1e2~mv2.jpg') center/cover no-repeat}
 .hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.35)}
 .hero-content{position:relative;text-align:center}
 .hero-title{font-family: Montserrat, Inter, sans-serif;font-size:42px;margin:0 0 8px}
@@ -49,7 +51,7 @@ a{color:inherit}
 .section-light{background:#fff}
 .section-dark{background:#000;color:#e7e7e7}
 .section-accent{background:var(--accent)}
-.section-image{background:url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;color:#fff}
+.section-image{background:url('./assets/images/imgi_65_a2a009_e0054fbaf9eb4446b930d4d05688e1e2~mv2.jpg') center/cover no-repeat;color:#fff}
 
 .section-title{font-family: Montserrat, Inter, sans-serif;font-weight:700;font-size:36px;margin:0 0 18px}
 .section-title.small{font-size:28px}
@@ -99,7 +101,8 @@ a{color:inherit}
 .contact-form{display:grid;gap:12px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 label{display:grid;gap:8px;font-size:14px}
-input,textarea{width:100%;padding:12px 14px;border-radius:6px;border:1px solid #2a5045;background:transparent;color:#e7e7e7}
+input,textarea{width:100%;padding:12px 14px;border-radius:6px;border:1px solid #56c39b;background:transparent;color:#e7e7e7}
+.btn-primary{background:var(--accent);color:#0b2f23;border-color:var(--accent)}
 .form-success{color:#a7f3d0;margin-top:8px}
 
 .cofunders{display:flex;gap:20px;align-items:center;justify-content:flex-start;margin-top:28px}
