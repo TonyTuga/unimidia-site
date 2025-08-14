@@ -41,6 +41,7 @@ a{color:inherit}
 .hero-content{position:relative;text-align:center}
 .hero-title{font-family: Montserrat, Inter, sans-serif;font-size:42px;margin:0 0 8px}
 .hero-sub{opacity:.9;margin:0 0 20px}
+.hero-content .btn{margin:0 6px}
 
 .btn{display:inline-block;border-radius:6px;padding:12px 18px;border:1px solid transparent;text-decoration:none;cursor:pointer;font-weight:600}
 .btn-primary{background:var(--accent);color:#0b2f23}
