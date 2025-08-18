@@ -37,6 +37,9 @@ a{color:inherit}
 .hero{position:relative;min-height:auto;background:transparent;color:#fff;display:block}
 .hero-poster{background:none}
 .hero-video-wrap{position:relative;width:100%;padding-top:56.25%;border-bottom:0;background:transparent}
+.hero, .hero-video-wrap{margin-top:0}
+/* Nudge up by 1px to eliminate any anti-alias seam under sticky header */
+.hero-video-wrap{margin-top:-1px}
 /* Make Vimeo iframe responsive and keep native controls fully visible */
 .hero-video{position:absolute;top:0;left:0;width:100%;height:100%;border:0;pointer-events:auto;opacity:1;display:block}
 .hero-overlay{display:none}
