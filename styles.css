@@ -24,8 +24,9 @@ a{color:inherit}
 
 /* Header */
 .site-header{position:sticky;top:0;z-index:50;background:#000;color:#fff}
-.site-header + .hero{margin-top:-64px}
+.site-header + .hero{margin-top:0}
 .header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.site-header{margin-bottom:0}
 .brand{font-family: Montserrat, Inter, sans-serif;font-weight:700;letter-spacing:.5px;text-transform:lowercase}
 .brand-logo{height:28px;display:block}
 .nav{display:flex;gap:24px}
@@ -34,9 +35,10 @@ a{color:inherit}
 .nav-toggle{display:none;background:none;border:0;color:#fff;font-size:22px}
 
 /* Hero */
-.hero{position:relative;min-height:auto;background:transparent;color:#fff;display:block;margin-top:-64px}
+.hero{position:relative;min-height:0;background:transparent;color:#fff;display:block;margin-top:0;padding-top:0}
 .hero-poster{background:none}
 .hero-video-wrap{position:relative;width:100%;padding-top:56.25%;border-bottom:0;background:transparent}
+.hero-video-wrap{margin-top:0}
 .hero, .hero-video-wrap{margin-top:0}
 /* Make Vimeo iframe responsive and keep native controls fully visible */
 .hero-video{position:absolute;top:0;left:0;width:100%;height:100%;border:0;pointer-events:auto;opacity:1;display:block}
