@@ -116,7 +116,7 @@ a{color:inherit}
 
 /* Features grid (after Quem somos?) */
 .grid-features{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:48px 24px;margin-top:12px}
-.grid-feature-item{display:grid;justify-items:center;text-align:center;padding:0;border:0}
+.grid-feature-item{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;gap:10px;padding:16px;border:1px solid #e6e6e6;border-radius:12px;background:#fff;min-width:0}
 .grid-feature-item img{height:68px;width:auto;margin:0 0 14px 0;filter:none}
 .grid-feature-item .grid-title{display:block;margin-bottom:10px;color:#000;font-weight:700;text-transform:uppercase;letter-spacing:.02em}
 .grid-feature-item .grid-sub{font-size:18px;line-height:1.5;color:#56c39b}
@@ -124,7 +124,7 @@ a{color:inherit}
 
 /* Stats 2 grid (percentages with icons) */
 .stats2-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 60px;margin-top:160px}
-.stats2-item{display:grid;gap:14px}
+.stats2-item{display:grid;gap:14px;border:1px solid #e6e6e6;border-radius:12px;padding:16px;background:#fff;min-width:0}
 .stats2-header{display:flex;align-items:center;gap:18px}
 .stats2-icon{height:48px;width:auto}
 .stats2-percent{font-size:44px;font-weight:700;color:#56c39b}
@@ -186,6 +186,7 @@ input,textarea{width:100%;padding:12px 14px;border-radius:6px;border:1px solid #
   .stats2-percent{font-size:36px}
   .section-image{padding-top:140px;padding-bottom:140px}
   .overlay-card{position:static;transform:none;max-width:none;margin-top:16px}
+  .stats2-header{flex-direction:row;align-items:center}
 }
 
 @media (max-width: 420px){
