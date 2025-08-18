@@ -1,6 +1,22 @@
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+// Show success message if redirected back with ?sent=1
+(() => {
+  try {
+    const url = new URL(window.location.href);
+    if (url.searchParams.get('sent') === '1') {
+      const success = document.getElementById('form-success');
+      if (success) success.hidden = false;
+      // Clean the query param from the URL
+      const cleanUrl = url.origin + url.pathname + url.hash;
+      window.history.replaceState({}, document.title, cleanUrl);
+    }
+  } catch (err) {
+    // ignore
+  }
+})();
+
 // Simple mobile menu toggle
 const toggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.nav');
@@ -12,26 +28,25 @@ if (toggle && nav) {
   });
 }
 
-// Contact form -> open mailto with prefilled body
+// Contact form submission via AJAX to static-friendly provider
 const form = document.getElementById('contact-form');
 if (form) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const data = new FormData(form);
-    const first = data.get('firstName') || '';
-    const last = data.get('lastName') || '';
-    const email = data.get('email') || '';
-    const msg = data.get('message') || '';
-
-    const subject = encodeURIComponent(`Contato via site — ${first} ${last}`);
-    const body = encodeURIComponent(`Nome: ${first} ${last}\nEmail: ${email}\n\nMensagem:\n${msg}`);
-
-    const to = 'comercial@unimidia.pt';
-    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-
-    const success = document.getElementById('form-success');
-    if (success) success.hidden = false;
-    form.reset();
+    fetch(form.action, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: data
+    }).then((res) => {
+      if (!res.ok) throw new Error('Failed');
+      const success = document.getElementById('form-success');
+      if (success) success.hidden = false;
+      form.reset();
+    }).catch(() => {
+      // Fallback to standard form submission
+      form.submit();
+    });
   });
 }
 
@@ -84,4 +99,31 @@ if (!initVimeo()) {
   }, 100);
 }
 
+
+// Lightweight slider for "Quem somos?"
+(() => {
+  const slider = document.querySelector('.media-frame.slider');
+  if (!slider) return;
+  const images = Array.from(slider.querySelectorAll('.slides img'));
+  if (images.length === 0) return;
+  let index = 0;
+
+  const apply = () => {
+    images.forEach((img, i) => img.classList.toggle('active', i === index));
+  };
+  apply();
+
+  const prevBtn = slider.querySelector('.slider-btn.prev');
+  const nextBtn = slider.querySelector('.slider-btn.next');
+  const prev = () => { index = (index - 1 + images.length) % images.length; apply(); };
+  const next = () => { index = (index + 1) % images.length; apply(); };
+  if (prevBtn) prevBtn.addEventListener('click', prev);
+  if (nextBtn) nextBtn.addEventListener('click', next);
+
+  // Keyboard support when slider is focused
+  slider.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
+  });
+})();
 
