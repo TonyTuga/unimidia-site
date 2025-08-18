@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog — Unimídia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css?v=3" />
+    <style>
+      body{background:#000;color:#e7e7e7}
+      .blog-all{max-width:1200px;margin:0 auto;padding:32px 20px}
+      .post-row{display:grid;grid-template-columns:360px 1fr;gap:24px;align-items:center;border:1px solid #222;border-radius:12px;overflow:hidden;margin-bottom:18px;background:#111}
+      .post-row img{width:100%;height:220px;object-fit:cover}
+      .post-meta{padding:16px}
+      .post-title{font-size:22px;margin:0 0 6px 0}
+      .post-text{color:#c9c9c9;margin:0}
+    </style>
+  </head>
+  <body>
+    <!-- reuse site header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./index.html" aria-label="Unimídia"><img class="brand-logo" src="./assets/icons/imgi_40_a2a009_4a8b717b4526412a9c62f8c11d2984b9~mv2.png" alt="Unimídia" /></a>
+        <nav class="nav" aria-label="Principal">
+          <a href="./index.html#quem">QUEM</a>
+          <a href="./index.html#onde">ONDE</a>
+          <a href="./blog.html" aria-current="page">BLOG</a>
+          <a href="./index.html#uniu">UNI_U</a>
+          <a href="./index.html#contactos">CONTATOS</a>
+        </nav>
+        <a class="nav-toggle" href="./index.html">☰</a>
+      </div>
+    </header>
+
+    <main class="blog-all">
+      <section>
+        <article class="post-row">
+          <a href="./post-geracao-z.html"><img src="./assets/images/imgi_78_a2a009_5eacd49a95894174b85c9cce1b67f441~mv2.jpg" alt="Geração Z" /></a>
+          <div class="post-meta">
+            <h3 class="post-title"><a href="./post-geracao-z.html" style="color:#fff;text-decoration:none">Geração Z: quem são</a></h3>
+            <p class="post-text">Os Baby Boomers foram definidos pelo mundo pós‑guerra. Os Millenials por um mundo em aparente constante crescimento...</p>
+          </div>
+        </article>
+        <article class="post-row">
+          <a href="./post-relacao-geracao-z.html"><img src="./assets/images/imgi_65_a2a009_e0054fbaf9eb4446b930d4d05688e1e2~mv2.jpg" alt="Relação da Geração Z com as marcas" /></a>
+          <div class="post-meta">
+            <h3 class="post-title"><a href="./post-relacao-geracao-z.html" style="color:#fff;text-decoration:none">A relação da geração Z com as marcas</a></h3>
+            <p class="post-text">Para um consumidor da Geração Z, nem todas as marcas são iguais. Pois bem, porque são então algumas marcas reverenciadas...</p>
+          </div>
+        </article>
+        <article class="post-row">
+          <a href="./post-sustentabilidade.html"><img src="./assets/images/imgi_67_a2a009_501287f29f6e4a5d9231c7774b406545~mv2.jpg" alt="Sustentabilidade e geração Z" /></a>
+          <div class="post-meta">
+            <h3 class="post-title"><a href="./post-sustentabilidade.html" style="color:#fff;text-decoration:none">O pós‑pandemia, a Sustentabilidade e a Geração Z</a></h3>
+            <p class="post-text">Não foi durante a pandemia que a Sustentabilidade (em particular, o eixo ambiental) entrou no...</p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© <span id="year"></span> Unimídia. Todos os direitos reservados.</small>
+      </div>
+    </footer>
+
+    <script src="./script.js?v=3"></script>
+  </body>
+  </html>
+
+
