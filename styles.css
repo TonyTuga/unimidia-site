@@ -165,6 +165,10 @@ input,textarea{width:100%;padding:12px 14px;border-radius:6px;border:1px solid #
   .split{grid-template-columns:1fr}
   .hide-on-mobile{display:none}
   /* team removed */
+  .section{padding:60px 0}
+  .grid-features{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 20px}
+  .grid-feature-item img{height:56px}
+  .section-image{padding-top:180px;padding-bottom:180px;min-height:auto}
 }
 @media (max-width: 720px){
   .section-title{font-size:48px;line-height:1.05}
@@ -174,6 +178,19 @@ input,textarea{width:100%;padding:12px 14px;border-radius:6px;border:1px solid #
   .facts-grid{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
+  .section{padding:48px 0}
+  .grid-features{grid-template-columns:1fr}
+  .grid-feature-item img{height:48px}
+  .stats2-grid{grid-template-columns:1fr;gap:28px;margin-top:80px}
+  .stats2-icon{height:40px}
+  .stats2-percent{font-size:36px}
+  .section-image{padding-top:140px;padding-bottom:140px}
+  .overlay-card{position:static;transform:none;max-width:none;margin-top:16px}
+}
+
+@media (max-width: 420px){
+  .section-title{font-size:38px}
+  .cards img{height:160px}
 }
 
 
