@@ -30,7 +30,7 @@ a{color:inherit}
 .site-header{margin-bottom:0}
 .brand{font-family: Montserrat, Inter, sans-serif;font-weight:700;letter-spacing:.5px;text-transform:lowercase}
 .brand-logo{height:28px;display:block}
-.nav{display:flex;gap:24px}
+.nav{display:flex;gap:24px;margin-left:auto;padding-right:24px}
 .nav a{color:#ddd;text-decoration:none;font-size:14px;letter-spacing:.14em}
 .nav a:hover{color:#fff}
 .nav-toggle{display:none;background:none;border:0;color:#fff;font-size:22px}
@@ -180,6 +180,8 @@ input,textarea{width:100%;padding:12px 14px;border-radius:6px;border:1px solid #
   .section-title{font-size:48px;line-height:1.05}
   .nav{display:none}
   .nav-toggle{display:block}
+  /* When mobile menu is toggled open, avoid pushing it to the right */
+  .nav{margin-left:0;padding-right:0}
   .cards{grid-template-columns:1fr}
   .facts-grid{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
