@@ -25,7 +25,7 @@ a{color:inherit}
 /* Header */
 .site-header{position:sticky;top:0;z-index:50;background:#000;color:#fff;margin:0;padding:0}
 .site-header + .hero{margin-top:0}
-.header-inner{display:flex;align-items:center;justify-content:space-between;height:64px;margin:0;padding:0}
+.header-inner{display:flex;align-items:center;justify-content:flex-start;height:64px;margin:0;padding:0}
 .site-header .brand{padding-left:24px}
 .site-header{margin-bottom:0}
 .brand{font-family: Montserrat, Inter, sans-serif;font-weight:700;letter-spacing:.5px;text-transform:lowercase}
@@ -179,7 +179,7 @@ input,textarea{width:100%;padding:12px 14px;border-radius:6px;border:1px solid #
 @media (max-width: 720px){
   .section-title{font-size:48px;line-height:1.05}
   .nav{display:none}
-  .nav-toggle{display:block}
+  .nav-toggle{display:block;margin-left:auto;padding-right:24px}
   /* When mobile menu is toggled open, avoid pushing it to the right */
   .nav{margin-left:0;padding-right:0}
   .cards{grid-template-columns:1fr}
