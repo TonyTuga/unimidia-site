@@ -26,6 +26,8 @@ a{color:inherit}
 .site-header{position:sticky;top:0;z-index:50;background:#000;color:#fff;margin:0;padding:0}
 .site-header + .hero{margin-top:0}
 .header-inner{display:flex;align-items:center;justify-content:flex-start;height:64px;margin:0;padding:0}
+/* Make header span full viewport width so nav can hug the right edge */
+.site-header .container.header-inner{max-width:none;width:100%;padding:0}
 .site-header .brand{padding-left:24px}
 .site-header{margin-bottom:0}
 .brand{font-family: Montserrat, Inter, sans-serif;font-weight:700;letter-spacing:.5px;text-transform:lowercase}
