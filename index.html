@@ -11,6 +11,24 @@
     <link rel="stylesheet" href="./styles.css?v=5" />
   </head>
   <body>
+    <!-- Hero / video at very top -->
+    <section id="top" class="hero hero-poster" style="margin-top:0;padding-top:0">
+      <div class="hero-video-wrap" aria-hidden="true">
+        <iframe
+          id="heroVimeo"
+          class="hero-video"
+          src="https://player.vimeo.com/video/1110071579?autoplay=0&muted=0&loop=0&autopause=0&title=0&byline=0&portrait=0&controls=1&playsinline=1"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          title="Hero video">
+        </iframe>
+      </div>
+      <div class="container hero-content">
+        <a id="hero-play" class="btn btn-primary" href="#">Ver vídeo</a>
+      </div>
+    </section>
+
     <header class="site-header" style="margin:0;padding:0;border:0">
       <div class="container header-inner">
         <a class="brand" href="#top" aria-label="Unimídia"><img class="brand-logo" src="./assets/icons/imgi_40_a2a009_4a8b717b4526412a9c62f8c11d2984b9~mv2.png" alt="Unimídia" /></a>
@@ -25,28 +43,7 @@
       </div>
     </header>
 
-    <main id="top">
-      <!-- Hero / video placeholder -->
-      <section class="hero hero-poster" style="margin-top:0;padding-top:0">
-        <div class="hero-video-wrap" aria-hidden="true">
-          <iframe
-            id="heroVimeo"
-            class="hero-video"
-            src="https://player.vimeo.com/video/1110071579?autoplay=0&muted=0&loop=0&autopause=0&title=0&byline=0&portrait=0&controls=1&dnt=1&app_id=122963&pip=1&transparent=0&playsinline=1"
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            title="Hero video">
-          </iframe>
-        </div>
-        <div class="container hero-content">
-          <a id="hero-play" class="btn btn-primary" href="#">Ver vídeo</a>
-        </div>
-      </section>
-
-      
-
-
+    <main>
       <!-- QUEM SOMOS -->
       <section id="quem" class="section section-light">
         <div class="container grid-2">
