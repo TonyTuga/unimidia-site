@@ -72,7 +72,7 @@ a{color:inherit}
 .section-light{background:#fff}
 .section-dark{background:#000;color:#e7e7e7}
 .section-accent{background:var(--accent)}
-.section-image{position:relative;background:url('./assets/images/imgi_23_b41fe8_9a3284a79d664948b48e77c7b74f031f~mv2.jpg') center/cover no-repeat;color:#fff;padding-top:240px;padding-bottom:240px;min-height:600px}
+.section-image{position:relative;background:url('./assets/images/imgi_23_b41fe8_9a3284a79d664948b48e77c7b74f031f~mv2.jpg') center/cover no-repeat;color:#fff;padding-top:240px;padding-bottom:360px;min-height:600px}
 
 .section-title{font-family: Montserrat, Inter, sans-serif;font-weight:700;font-size:88px;line-height:1.02;margin:0 0 12px;background:linear-gradient(180deg,#64caa1 0%, #3aa37b 100%);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:0}
 .section #quem .section-title{font-size:88px}
@@ -104,7 +104,7 @@ a{color:inherit}
 .section#quem p strong{font-weight:700;color:#2a3440}
 /* lock to three lines using explicit <br> already in markup */
 
-.overlay-card{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);background:rgba(86,195,155,.95);color:#ffffff;border-radius:14px;padding:36px;max-width:1100px}
+.overlay-card{position:absolute;left:50%;bottom:0;transform:translate(-50%, 50%);background:#56c39b;color:#ffffff;border-radius:14px;padding:36px;max-width:1100px}
 .section-image .section-title{background:none;color:#ffffff}
 .section-image .overlay-card p{font-size:22px;line-height:1.6;max-width:950px;margin:12px 0 0 0}
 .facts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
@@ -194,7 +194,7 @@ input,textarea{width:100%;padding:12px 14px;border-radius:6px;border:1px solid #
   .stats2-grid{grid-template-columns:1fr;gap:28px;margin-top:80px}
   .stats2-icon{height:40px}
   .stats2-percent{font-size:36px}
-  .section-image{padding-top:140px;padding-bottom:140px}
+  .section-image{padding-top:140px;padding-bottom:220px}
   .overlay-card{position:static;transform:none;max-width:none;margin-top:16px}
   .stats2-header{flex-direction:row;align-items:center}
 }
