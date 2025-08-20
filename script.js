@@ -127,7 +127,7 @@ if (!initVimeo()) {
   });
 })();
 
-// Smooth, centered scroll for header nav anchors and initial hash
+// Smooth scroll for header nav anchors and initial hash (align section start below sticky header)
 (() => {
   const header = document.querySelector('.site-header');
   const toggle = document.querySelector('.nav-toggle');
@@ -135,10 +135,12 @@ if (!initVimeo()) {
   const headerNav = document.querySelector('.site-header .nav');
   if (!headerNav) return;
 
-  const centerScrollTo = (element) => {
+  const scrollToWithHeaderOffset = (element) => {
     const rect = element.getBoundingClientRect();
     const absoluteTop = window.pageYOffset + rect.top;
-    const targetTop = absoluteTop - (window.innerHeight / 2) + (rect.height / 2);
+    const headerHeight = header ? header.offsetHeight : 0;
+    const spacing = 12; // small breathing room below header
+    const targetTop = absoluteTop - headerHeight - spacing;
     window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
   };
 
@@ -153,7 +155,7 @@ if (!initVimeo()) {
     const id = href.slice(1);
     const section = document.getElementById(id);
     if (!section) return;
-    centerScrollTo(section);
+    scrollToWithHeaderOffset(section);
     // Close mobile menu if toggle is visible
     if (toggle && getComputedStyle(toggle).display !== 'none' && nav) {
       nav.style.display = 'none';
@@ -163,13 +165,13 @@ if (!initVimeo()) {
     }
   });
 
-  // Center to section if page loads with a hash
+  // Align to section start if page loads with a hash
   window.addEventListener('load', () => {
     if (window.location.hash && window.location.hash.length > 1) {
       const id = window.location.hash.slice(1);
       const section = document.getElementById(id);
       if (section) {
-        setTimeout(() => centerScrollTo(section), 100);
+        setTimeout(() => scrollToWithHeaderOffset(section), 100);
       }
     }
   });
