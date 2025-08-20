@@ -185,6 +185,11 @@ input,textarea{width:100%;padding:12px 14px;border-radius:6px;border:1px solid #
   .nav-toggle{display:block;margin-left:auto;padding-right:24px}
   /* When mobile menu is toggled open, avoid pushing it to the right */
   .nav{margin-left:0;padding-right:0}
+  /* Mobile dropdown menu styles */
+  .site-header{position:sticky;top:0;z-index:50}
+  .site-header .nav{position:absolute;top:64px;left:0;right:0;background:#000;border-top:1px solid #222;box-shadow:0 10px 20px rgba(0,0,0,.4);padding:12px 24px}
+  .site-header .nav a{display:block;padding:10px 0;color:#ddd}
+  .site-header .nav a:hover{color:#fff}
   .cards{grid-template-columns:1fr}
   .facts-grid{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
