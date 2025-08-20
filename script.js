@@ -127,3 +127,51 @@ if (!initVimeo()) {
   });
 })();
 
+// Smooth, centered scroll for header nav anchors and initial hash
+(() => {
+  const header = document.querySelector('.site-header');
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.nav');
+  const headerNav = document.querySelector('.site-header .nav');
+  if (!headerNav) return;
+
+  const centerScrollTo = (element) => {
+    const rect = element.getBoundingClientRect();
+    const absoluteTop = window.pageYOffset + rect.top;
+    const targetTop = absoluteTop - (window.innerHeight / 2) + (rect.height / 2);
+    window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+  };
+
+  headerNav.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    const link = target.closest('a[href^="#"]');
+    if (!link) return;
+    const href = link.getAttribute('href');
+    if (!href || href.length < 2) return;
+    event.preventDefault();
+    const id = href.slice(1);
+    const section = document.getElementById(id);
+    if (!section) return;
+    centerScrollTo(section);
+    // Close mobile menu if toggle is visible
+    if (toggle && getComputedStyle(toggle).display !== 'none' && nav) {
+      nav.style.display = 'none';
+    }
+    if (history.pushState) {
+      history.pushState(null, '', `#${id}`);
+    }
+  });
+
+  // Center to section if page loads with a hash
+  window.addEventListener('load', () => {
+    if (window.location.hash && window.location.hash.length > 1) {
+      const id = window.location.hash.slice(1);
+      const section = document.getElementById(id);
+      if (section) {
+        setTimeout(() => centerScrollTo(section), 100);
+      }
+    }
+  });
+})();
+
