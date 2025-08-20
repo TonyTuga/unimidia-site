@@ -68,6 +68,7 @@ a{color:inherit}
 
 /* Sections */
 .section{padding:72px 0}
+.section{scroll-margin-top:76px}
 .section#uniu{padding:0}
 .section-light{background:#fff}
 .section-dark{background:#000;color:#e7e7e7}

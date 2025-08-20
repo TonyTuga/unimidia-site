@@ -127,7 +127,7 @@ if (!initVimeo()) {
   });
 })();
 
-// Smooth scroll for header nav anchors and initial hash (align section start below sticky header)
+// Smooth scroll for header nav anchors and initial hash (align section start below sticky header via CSS scroll-margin-top)
 (() => {
   const header = document.querySelector('.site-header');
   const toggle = document.querySelector('.nav-toggle');
@@ -135,13 +135,18 @@ if (!initVimeo()) {
   const headerNav = document.querySelector('.site-header .nav');
   if (!headerNav) return;
 
-  const scrollToWithHeaderOffset = (element) => {
-    const rect = element.getBoundingClientRect();
-    const absoluteTop = window.pageYOffset + rect.top;
-    const headerHeight = header ? header.offsetHeight : 0;
-    const spacing = 12; // small breathing room below header
-    const targetTop = absoluteTop - headerHeight - spacing;
-    window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+  const scrollToAlignedStart = (element) => {
+    try {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    } catch (_) {
+      // Fallback if scrollIntoView options unsupported
+      const rect = element.getBoundingClientRect();
+      const absoluteTop = window.pageYOffset + rect.top;
+      const headerHeight = header ? header.offsetHeight : 0;
+      const spacing = 12;
+      const targetTop = absoluteTop - headerHeight - spacing;
+      window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+    }
   };
 
   headerNav.addEventListener('click', (event) => {
@@ -155,7 +160,7 @@ if (!initVimeo()) {
     const id = href.slice(1);
     const section = document.getElementById(id);
     if (!section) return;
-    scrollToWithHeaderOffset(section);
+    scrollToAlignedStart(section);
     // Close mobile menu if toggle is visible
     if (toggle && getComputedStyle(toggle).display !== 'none' && nav) {
       nav.style.display = 'none';
@@ -171,7 +176,7 @@ if (!initVimeo()) {
       const id = window.location.hash.slice(1);
       const section = document.getElementById(id);
       if (section) {
-        setTimeout(() => scrollToWithHeaderOffset(section), 100);
+        setTimeout(() => scrollToAlignedStart(section), 100);
       }
     }
   });
