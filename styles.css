@@ -74,7 +74,7 @@ a{color:inherit}
 .section-accent{background:var(--accent)}
 .section-image{position:relative;background:url('./assets/images/imgi_23_b41fe8_9a3284a79d664948b48e77c7b74f031f~mv2.jpg') center/cover no-repeat;color:#fff;padding-top:240px;padding-bottom:360px;min-height:600px}
 
-.section-title{font-family: Montserrat, Inter, sans-serif;font-weight:700;font-size:88px;line-height:1.02;margin:0 0 12px;background:linear-gradient(180deg,#64caa1 0%, #3aa37b 100%);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:0}
+.section-title{font-family: Montserrat, Inter, sans-serif;font-weight:700;font-size:88px;line-height:1.02;margin:0 0 12px;color:var(--accent);letter-spacing:0}
 .section #quem .section-title{font-size:88px}
 /* Slightly smaller heading just for the Quem bloc */
 .section#quem .section-title{font-size:72px;line-height:1.05}
