@@ -34,7 +34,8 @@ if (form) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const data = new FormData(form);
-    fetch(form.action, {
+    const ajaxUrl = form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+    fetch(ajaxUrl, {
       method: 'POST',
       headers: { 'Accept': 'application/json' },
       body: data
@@ -66,10 +67,6 @@ const initVimeo = () => {
   // Keep UI in sync with player state
   player.on('play', () => {
     if (playBtn) playBtn.style.display = 'none';
-    if (toggleBtn) {
-      toggleBtn.textContent = 'Pausa';
-      toggleBtn.setAttribute('aria-pressed', 'false');
-    }
     // native controls will be visible; nothing else to show
   });
   player.on('pause', () => {
